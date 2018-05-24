@@ -38,6 +38,7 @@ configurations {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2')
+    compile group: 'com.didispace', name: 'spring-boot-starter-swagger', version: '1.4.1.RELEASE'
     mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.6'
     mybatisGenerator 'tk.mybatis:mapper:4.0.2'
     mybatisGenerator 'mysql:mysql-connector-java'

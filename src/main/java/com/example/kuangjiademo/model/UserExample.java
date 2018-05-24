@@ -1,6 +1,7 @@
 package com.example.kuangjiademo.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class UserExample {
@@ -401,6 +402,126 @@ public class UserExample {
 
         public Criteria andPasswordNotBetween(String value1, String value2) {
             addCriterion("password not between", value1, value2, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeIsNull() {
+            addCriterion("creare_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeIsNotNull() {
+            addCriterion("creare_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeEqualTo(Date value) {
+            addCriterion("creare_time =", value, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeNotEqualTo(Date value) {
+            addCriterion("creare_time <>", value, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeGreaterThan(Date value) {
+            addCriterion("creare_time >", value, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("creare_time >=", value, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeLessThan(Date value) {
+            addCriterion("creare_time <", value, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeLessThanOrEqualTo(Date value) {
+            addCriterion("creare_time <=", value, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeIn(List<Date> values) {
+            addCriterion("creare_time in", values, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeNotIn(List<Date> values) {
+            addCriterion("creare_time not in", values, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeBetween(Date value1, Date value2) {
+            addCriterion("creare_time between", value1, value2, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreareTimeNotBetween(Date value1, Date value2) {
+            addCriterion("creare_time not between", value1, value2, "creareTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginIsNull() {
+            addCriterion("last_login is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginIsNotNull() {
+            addCriterion("last_login is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginEqualTo(Date value) {
+            addCriterion("last_login =", value, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginNotEqualTo(Date value) {
+            addCriterion("last_login <>", value, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginGreaterThan(Date value) {
+            addCriterion("last_login >", value, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginGreaterThanOrEqualTo(Date value) {
+            addCriterion("last_login >=", value, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginLessThan(Date value) {
+            addCriterion("last_login <", value, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginLessThanOrEqualTo(Date value) {
+            addCriterion("last_login <=", value, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginIn(List<Date> values) {
+            addCriterion("last_login in", values, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginNotIn(List<Date> values) {
+            addCriterion("last_login not in", values, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginBetween(Date value1, Date value2) {
+            addCriterion("last_login between", value1, value2, "lastLogin");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastLoginNotBetween(Date value1, Date value2) {
+            addCriterion("last_login not between", value1, value2, "lastLogin");
             return (Criteria) this;
         }
     }
