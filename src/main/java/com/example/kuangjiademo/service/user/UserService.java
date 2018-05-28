@@ -8,4 +8,5 @@ import com.example.kuangjiademo.model.User;
  */
 public interface UserService {
     public void reg(User user);
+    public User login(User user);
 }

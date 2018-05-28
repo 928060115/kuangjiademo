@@ -17,7 +17,7 @@ public class ResultUtil {
         return success(null);
     }
 
-    public static Result error(Integer code,String msg){
+    public static Result error(String msg){
         Result result = new Result();
         result.setCode(ResultCodeEnum.ERROR.getCode());
         result.setMsg(msg);

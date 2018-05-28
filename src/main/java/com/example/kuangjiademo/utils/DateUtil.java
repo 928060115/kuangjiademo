@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author liuyang
  */
-public class DateUtils {
+public class DateUtil {
 
     public static final String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
     public static final String MINUTE_PATTERN = "yyyy-MM-dd HH:mm";
@@ -22,7 +22,7 @@ public class DateUtils {
     public static final String MINUTE_ONLY_PATTERN = "mm";
     public static final String HOUR_ONLY_PATTERN = "HH";
 
-    private DateUtils() {
+    private DateUtil() {
     }
 
     /**
@@ -38,7 +38,7 @@ public class DateUtils {
      */
     public static String dateFormat(Date date, String pattern) throws ParseException {
         if (pattern == null || pattern == "") {
-            pattern = DateUtils.DATE_PATTERN;
+            pattern = DateUtil.DATE_PATTERN;
         }
         SimpleDateFormat sdf = new SimpleDateFormat(pattern);
         return sdf.format(date);
@@ -57,7 +57,7 @@ public class DateUtils {
      */
     public static Date dateParse(String dateTimeString, String pattern) throws ParseException {
         if (pattern == null || pattern == "") {
-            pattern = DateUtils.DATE_PATTERN;
+            pattern = DateUtil.DATE_PATTERN;
         }
         SimpleDateFormat sdf = new SimpleDateFormat(pattern);
         return sdf.parse(dateTimeString);
@@ -73,7 +73,7 @@ public class DateUtils {
      * @throws ParseException
      */
     public static String dateTimeToDateString(Date dateTime) throws ParseException {
-        String dateTimeString = DateUtils.dateFormat(dateTime, DateUtils.DATE_TIME_PATTERN);
+        String dateTimeString = DateUtil.dateFormat(dateTime, DateUtil.DATE_TIME_PATTERN);
         return dateTimeString.substring(0, 10);
     }
 
@@ -87,7 +87,7 @@ public class DateUtils {
      * @throws ParseException
      */
     public static String dateTimeToDateStringIfTimeEndZero(Date dateTime) throws ParseException {
-        String dateTimeString = DateUtils.dateFormat(dateTime, DateUtils.DATE_TIME_PATTERN);
+        String dateTimeString = DateUtil.dateFormat(dateTime, DateUtil.DATE_TIME_PATTERN);
         if (dateTimeString.endsWith("00:00:00")) {
             return dateTimeString.substring(0, 10);
         } else {
@@ -99,7 +99,7 @@ public class DateUtils {
      * 用途：获得 Date的时、分、秒 2017年8月5日 下午12:21:34 张进 return String
      */
     public static String getHHmmssTime(Date date) {
-        SimpleDateFormat sdf_hour_format = new SimpleDateFormat(DateUtils.HOUR_FORMAT);
+        SimpleDateFormat sdf_hour_format = new SimpleDateFormat(DateUtil.HOUR_FORMAT);
         Calendar cale = Calendar.getInstance();
         cale.setTime(date);
         String temp = "";
@@ -733,7 +733,7 @@ public class DateUtils {
         Date da = dateOne;
         list.add(startMonday);
         for (int i = 0; i >= 0; i++) {
-            if (DateUtils.dateCompare(da, dateTwo) == 0) {
+            if (DateUtil.dateCompare(da, dateTwo) == 0) {
                 break;
             } else {
                 if (i % 2 == 0) {
@@ -741,7 +741,7 @@ public class DateUtils {
                 } else {
                     da = dateAddDays(da, 1);
                 }
-                result = DateUtils.dateFormat(da, "yyyy-MM-dd");
+                result = DateUtil.dateFormat(da, "yyyy-MM-dd");
                 list.add(result);
             }
         }
@@ -763,7 +763,7 @@ public class DateUtils {
         Date comPareFlag;
         for (int i = 0; i >= 0; i++) {
             comPareFlag = dateParse(getLastOfMonth(da, "yyyy-MM-dd"), "yyyy-MM-dd");
-            if (DateUtils.dateCompare(comPareFlag, dateTwo) == 0) {
+            if (DateUtil.dateCompare(comPareFlag, dateTwo) == 0) {
                 break;
             } else {
                 result = getFirstOfMonth(da, "yyyy-MM-dd");
@@ -794,7 +794,7 @@ public class DateUtils {
         Date comPareFlag;
         for (int i = 0; i >= 0; i++) {
             comPareFlag = getLastOfYear(da);
-            if (DateUtils.dateCompare(comPareFlag, dateTwo) == 0) {
+            if (DateUtil.dateCompare(comPareFlag, dateTwo) == 0) {
                 break;
             } else {
                 result = dateFormat(getFirstOfYear(da), "yyyy-MM-dd");

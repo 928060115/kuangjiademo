@@ -27,7 +27,7 @@ public class RandomValidateCodeUtil {
     /**
      * 图片高
      */
-    private int height=25;
+    private int height=30;
     /**
      * 干扰线数量
      * */
@@ -114,7 +114,7 @@ public class RandomValidateCodeUtil {
         g.setColor(new Color(random.nextInt(101),random.nextInt(78),random.nextInt(121)));
         String rand = String.valueOf(getRandomcodeString(random.nextInt(randString.length())));
         randomString += rand;
-        g.translate(random.nextInt(3),random.nextInt(3));
+        g.translate(random.nextInt(3),random.nextInt(6));
         g.drawString(rand,13*i,16);
         return randomString;
     }
