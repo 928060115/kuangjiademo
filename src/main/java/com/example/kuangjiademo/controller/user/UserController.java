@@ -29,6 +29,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "/reg",method = RequestMethod.POST)
     public Result reg(User user){
@@ -39,7 +40,8 @@ public class UserController {
     @ApiOperation(value = "用户登录")
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public Result login(User user, String code, HttpSession session){
-        String resultVerifyCode = Utils.checkVerify(session,code);
+        String resultVerifyCode = Utils.checkVerify(session, code);
+
         if ("true".equals(resultVerifyCode)){
             user.setPassword(MD5Util.md5(user.getPassword()));
             user = userService.login(user);

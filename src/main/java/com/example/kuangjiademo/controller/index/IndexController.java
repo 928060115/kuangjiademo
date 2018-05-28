@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
-    @RequestMapping(value = "/cms")
+    @RequestMapping(value = "/")
     public String index(){
-        return "/cms/index.html";
+        return "/index.html";
     }
 }
