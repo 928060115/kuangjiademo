@@ -7,6 +7,7 @@ import com.example.kuangjiademo.model.User;
  * @since 2018/5/25 16:46
  */
 public interface UserService {
-    public void reg(User user);
-    public User login(User user);
+    public boolean reg(User user);
+    public String login(User user);
+    String refresh(String oldToken);
 }

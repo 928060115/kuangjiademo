@@ -2,8 +2,9 @@ package com.example.kuangjiademo.mapper;
 
 import com.example.kuangjiademo.model.User;
 import com.example.kuangjiademo.model.UserExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserMapper {
     long countByExample(UserExample example);
@@ -19,6 +20,8 @@ public interface UserMapper {
     List<User> selectByExample(UserExample example);
 
     User selectByPrimaryKey(Integer id);
+
+    User findByUsername(String userName);
 
     int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 

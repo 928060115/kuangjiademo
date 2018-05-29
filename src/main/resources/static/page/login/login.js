@@ -1,4 +1,12 @@
 layui.use(['form','layer','jquery'],function(){
+
+    var xmlHttp;
+    if(window.ActiveXObject){
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }else if(window.XMLHttpRequest){
+        xmlHttp = new XMLHttpRequest();
+    }
+
     var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer
         $ = layui.jquery;
@@ -24,7 +32,7 @@ layui.use(['form','layer','jquery'],function(){
         if(username!=""&&password!=""&&code.length==4){
             $.ajax({
                 type:"POST",
-                url:"/user/login",
+                url:"/public/login",
                 dataType:"JSON",
                 data:{
                     "userName":username,
@@ -32,11 +40,13 @@ layui.use(['form','layer','jquery'],function(){
                     "code":code
                 },
                 success:function(data){
-                   console.log(data)
+                    sessionStorage.setItem("Authorization",data.data.token);
+                    location.href = "/";
                 }
             })
         }else{
             alert("请检查您的输入！");
+            $(this).text("登录").removeAttr("disabled").removeClass("layui-disabled");
         }
     })
 
