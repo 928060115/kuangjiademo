@@ -26,7 +26,7 @@ CREATE TABLE `t_user`  (
   `uid` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户id\n',
   `user_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
   `password` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户密码',
-  `creare_time` datetime(6) NULL DEFAULT NULL COMMENT '注册时间',
+  `create_time` datetime(6) NULL DEFAULT NULL COMMENT '注册时间',
   `last_login` datetime(6) NULL DEFAULT NULL COMMENT '最后登录时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;

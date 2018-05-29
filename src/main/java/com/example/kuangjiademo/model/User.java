@@ -12,7 +12,7 @@ public class User implements Serializable {
 
     private String password;
 
-    private Date creareTime;
+    private Date createTime;
 
     private Date lastLogin;
 
@@ -50,12 +50,12 @@ public class User implements Serializable {
         this.password = password == null ? null : password.trim();
     }
 
-    public Date getCreareTime() {
-        return creareTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreareTime(Date creareTime) {
-        this.creareTime = creareTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public Date getLastLogin() {

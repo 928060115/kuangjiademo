@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void reg(User user) {
         Date createTime = new Date();
-        user.setCreareTime(createTime);
+        user.setCreateTime(createTime);
         user.setPassword(MD5Util.md5(user.getPassword()));
         String uid = "ID" + createTime.getTime();
         user.setUid(uid);

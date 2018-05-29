@@ -1,4 +1,4 @@
-package com.example.kuangjiademo.controller.index;
+package com.example.kuangjiademo.controller.page;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @since 2018/5/28 15:50
  */
 @Controller
-public class IndexController {
-    @RequestMapping(value = "/cms")
+public class PageController {
+    @RequestMapping(value = "/")
     public String index(){
-        return "/cms/index.html";
+        return "/index.html";
     }
 }
