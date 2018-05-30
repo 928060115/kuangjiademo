@@ -1,6 +1,9 @@
 package com.example.kuangjiademo.config;
 
+import com.example.kuangjiademo.interceptor.UserSecurityInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -11,6 +14,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class WebMvcStaticConfig implements WebMvcConfigurer {
+
+    @Autowired
+    private UserSecurityInterceptor userSecurityInterceptor;
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login").setViewName("/page/login/login.html");
@@ -19,5 +26,10 @@ public class WebMvcStaticConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/login.js").addResourceLocations("classpath:/static/page/login/login.js");
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(userSecurityInterceptor).addPathPatterns("/");
     }
 }
